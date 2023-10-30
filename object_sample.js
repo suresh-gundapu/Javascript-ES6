@@ -1,5 +1,4 @@
 const student = {
-
   id: 1,
   name: "suresh",
   marks: 10,
