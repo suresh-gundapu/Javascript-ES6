@@ -8,9 +8,9 @@ const arr = [
 
   { id: 3, brand: "apple", price: 3000 },
 ];
-//arr.splice(0,1);//remove
+arr.splice(0,1);//remove
 
-arr.splice(0,0,{ id: 1, brand: "redme", price: 1000 });// for added
+//arr.splice(0,0,{ id: 1, brand: "redme", price: 1000 });// for added
 
 console.log(arr);
 
