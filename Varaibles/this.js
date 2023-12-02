@@ -21,7 +21,7 @@ const obj = {
 };
 console.log(`this is outside obj` + this); //empty object
 let sample = function () {
-  console.log(`this is inside function ` + this); // global object
+  console.log(`this is inside function ` + this); // global object(window object);
 };
 
 sample();
