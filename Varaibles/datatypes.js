@@ -5,7 +5,8 @@
  * 
  * type variables JS is loosely coupled language we can store any type of values in varaibles 
  * 
- * 
+ * Premitive Data types:
+ * ====================
  * 1)strings
  * 2)numbers
  * 3)bigint
