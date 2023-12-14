@@ -1,0 +1,143 @@
+ES6 Features:
+=============
+
+ES6 = ECMAScript ==> 2015
+6th edition 
+
+1) Let and const keywords:
+===========================
+
+=> let and const are used to declare variables and we cant reassigning by use this both
+
+=> both are used to overcome re-declaration problems 
+
+=> in block scope if we declare var  keyword we can access outside block but if declare let and const we cant access outside block
+this is leads to code security 
+
+
+2) Arrow Functions:
+====================
+
+=> These are special type functions used to create function in jS
+
+=> Reduce number of lines or syntax when compare to normal functions short syntax for function expression
+
+=> don't use  function keyword  , use return keyword within expression if single statement no need curly braces also
+
+=>arrow function dont have own this , so in object dont use this arrow function 
+
+=> this is not hoisted , so before use we need to defined
+
+
+3) Multi line strings:
+======================
+
+=> it allows multi line strings using back ticks by using template Literals
+
+var x = ` sfsdfkk 
+fsdsdfsdf
+sdfsfsdf`;
+
+4) Default parameters:
+======================
+
+=> some times when declaring functions and call arguments with passing parameters if we decalre parameters in function paranthesis but we dont send arguments 
+
+through calling function leads to errors so overcome this we can decalre Default parameters in function 
+
+let func  = function(a= 0; b =0){
+
+}
+func();
+5)Template Literals:
+====================
+=> these are used to substitute individual variables to inside strings by using back ticks and string interpolation ${}
+
+=> before old way we can use concantecate using + 
+
+=> it allows multi line strings using back ticks
+
+let x = "dfdsf";
+
+let y = ` hi  this is ${x} of me `;
+
+console.log(y);// hi  this is dfdsf of me 
+
+
+6) Destructing , spread , Rest:
+===============================
+
+
+
+
+7) Object Literals:
+=====================
+Object Literals  are creating object and and create and access properties and methods very easily
+
+const Obj = {
+
+  x;
+  y;
+  func:function(){
+
+  }
+}
+
+
+8) Modules:
+===========
+these are very usefule to react angular other frame works 
+
+if export one file/module then we can exporting variable , classes , function to another module/file
+
+if import we can imporitng which is exporting file of varables , classes, functions of module/file 
+
+named export and default export is there 
+
+
+1) named export 
+
+x_file.js:
+export const  x = {
+  x:1,
+  y:2
+}
+another_file.js:
+import {x} from '/x_file';
+console.log(x);
+
+2) default export:
+------------------
+x_file.js:
+const  x = {
+  x:1,
+  y:2
+}
+export default x;
+another_file.js:
+import x from '/x_file';
+console.log(x);
+
+9) Promices:
+============
+
+
+
+
+10) classes:
+============
+
+
+
+
+
+ES 6 --- Methods:
+================
+
+Array methods:
+==============
+
+
+
+
+
