@@ -1,0 +1,74 @@
+<!-----
+ES8 Async Functions - async/await :
+======================================
+
+=> In js Number of ajax calls increasing means nested ajax calls these are produce call back hell problems 
+
+=> the above problems over come by clean callbacks or promices but in promice based ajax call .then , .done , .await functions we are using callbacks till 
+
+=> So ansiest solution to synchronize these calls via async and await , ES8 JS version introduced promice based async and await 
+
+=> they allowed to write promice based code as if it is synchronious , but without blocking main thread 
+
+syntax:
+
+async function(){
+$var x = await $.ajax(url);
+}
+
+=> in async await concept error handling method integrate with general error handling like try catch block ...
+-->
+
+<html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h3>Call Back Hell and Clean</h3>
+
+    <h4>Countries- Name contains "India"</h4>
+    <div id="countries-ind"></div>
+    <h4>Countries- Languages "Hindhi"</h4>
+    <div id="countries-hindi"></div>
+    <h4>Countries- Currency "INR"</h4>
+    <div id="countries-inr"></div>
+
+    <button type="submit" id="btn">Load</button>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("#btn").click(function () {
+        var url1 = "https://restcountries.com/v3.1/name/india";
+        var url2 = "https://restcountries.com/v3.1/lang/hin";
+        var url3 = "https://restcountries.com/v3.1/currency/inr";
+
+        let myfun = async () => {
+          try {
+            var url_india = await $.ajax(url1);
+            $.each(url_india, function (index, obj) {
+              $("#countries-ind").append(obj.name["common"]).append("</br>");
+            });
+            var url_lang = await $.ajax(url2);
+
+            $.each(url_lang, function (index, obj) {
+              $("#countries-hindi").append(obj.name["common"]).append("</br>");
+            });
+
+            var url_inr = await $.aja(url3);
+
+            $.each(url_inr, function (index, obj) {
+              $("#countries-inr").append(obj.name["common"]).append("</br>");
+            });
+          } catch (exec) {
+            console.log("please try again" + exec);
+          }
+        };
+        myfun();
+      });
+    });
+  </script>
+</html>

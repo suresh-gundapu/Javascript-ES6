@@ -1,3 +1,31 @@
+<!-- Promices in JS :
+================
+
+=> Promices introdused mainly for resolved callback hell problem and write call backs with ajax efficient and code readble 
+
+=> Promice is nothing but it is an object
+
+=> A promice object represents a value that may not be availble yet , but in future it will availble
+
+=> It allows asynchonous model in more synchnous fashion 
+
+=> Almost all JS based frameworks or libraries are using promices , here code syntax is different but concept is same 
+=> Every promice onject provide 2 states 
+
+1) Resolved state 
+
+promiceobj.done(function(response){
+response//
+});
+
+2) failure state
+
+promiceObj.failure(function(jqxhr,textStatus,errorThrown ){
+console.log(errorThrown);
+});
+
+
+-->
 <html>
   <head>
     <style>
@@ -52,15 +80,23 @@
       $(document).ready(function () {
         $("#btn").click(() => {
           let country_value = $("#country").val();
-          var url ="https://restcountries.com/v3.1/name/" + country_value + "?fullText=true";
           // console.log(url);
-          $.ajax({
-            url: url,
-            success: function (res) {
-              var responce_cap = res[0].capital;
-              $("#countryDisplay").html(responce_cap);
-            },
-          });
+          var prObj = $.ajax(
+            "https://restcountries.com/v3.1/name/" +
+              country_value +
+              "?fullText=true"
+          );
+
+          promiceObj
+            .done(function (response) {
+              $("#htm").html(response[0].capital);
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+              console.log(errorThrown + "please try again");
+            })
+            .always(function (response) {
+              console.log("Ajax completed");
+            });
         });
       });
     </script>

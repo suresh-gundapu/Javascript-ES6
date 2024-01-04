@@ -1,0 +1,62 @@
+<!-- Promise Based AJAX calls with Fetch API :
+==========================================
+
+=> by using fetch API functon we can interact with third party apis in JS easily 
+
+=> Here Fetch API using promice based AJAX calls 
+
+=> It returns promice 
+
+=> It is an object which contain a single value either a responce or error that occured 
+
+=>.then():
+tells the program what to do once promice is completed 
+
+
+fetch(url).then(function(response){
+
+return response.json();
+}).then(function(data){
+console.log(data);
+});
+
+=> Here firts fetch API calls URL then it is act as promice object so we can use then to attach second stage , in first stage it return json data by using response.json function , in second stage it return actual data  -->
+
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+<h3>Fetch API</h3>
+Enter Country Name: <input type="text" id="country"> </br>
+
+<p id="cap"></p>
+
+<button type="submit" id="btn">Load</button>
+
+</body>
+<script>
+$(document).ready(function(){
+$("#btn").click(function(){
+var country_value= $("#country").val();
+var url="https://restcountries.com/v3.1/name/"+country_value+"?fullText=true";
+
+fetch(url).then(function(response){
+console.log(response);
+    return response.json();
+}).then(function(data){
+console.log(data);
+    $("#cap").html(data[0].capital);
+},function(exec){
+
+    console.log("error")
+})
+ 
+
+})
+
+
+});
+
+</script>
+</html>

@@ -1,4 +1,5 @@
-// apply also same as call , it invokes the outside of the object for accessing properties through "this" keyword and  but difference is we can send argument as array 
+// apply also same as call , it invokes the outside of the object for accessing properties through "this" keyword and  but 
+//difference is we can send argument as array 
 
 const student1 = {
 

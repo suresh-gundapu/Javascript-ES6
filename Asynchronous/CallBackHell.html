@@ -1,0 +1,86 @@
+<!-- 
+  Call back Hell and Clean call backs :
+======================================
+
+=> When we using nested ajax class means one ajax (callback) success function having another ajax call so on..
+
+=> It produce complexity of code so over come this we need implement clean call backs 
+
+=> here clean callbacks written by functions but it gives small solution complete solution provided by promices 
+
+ -->
+
+<html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h3>Call Back Hell and Clean</h3>
+
+    <h4>Countries- Name contains "India"</h4>
+    <div id="countries-ind"></div>
+    <h4>Countries- Languages "Hindhi"</h4>
+    <div id="countries-hindi"></div>
+    <h4>Countries- Currency "INR"</h4>
+    <div id="countries-inr"></div>
+
+    <button type="submit" id="btn">Load</button>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("#btn").click(function () {
+        var url1 = "https://restcountries.com/v3.1/name/india";
+        var url2 = "https://restcountries.com/v3.1/lang/hin";
+        var url3 = "https://restcountries.com/v3.1/currency/inr";
+
+        $.ajax({
+          url: url1,
+          success: function (response) {
+            $.each(response, function (index, obj) {
+              console.log(obj.name["common"]);
+              $("#countries-ind").append(obj.name["common"]).append("</br>");
+            });
+
+            $.ajax({
+              url: url2,
+              success: function (response) {
+                $.each(response, function (index, obj) {
+                  console.log(obj.name["common"]);
+                  $("#countries-hindi")
+                    .append(obj.name["common"])
+                    .append("</br>");
+                });
+
+                $.ajax({
+                  url: url3,
+                  success: function (response) {
+                    $.each(response, function (index, obj) {
+                      console.log(obj.name["common"]);
+                      $("#countries-inr")
+                        .append(obj.name["common"])
+                        .append("</br>");
+                    });
+                  },
+                  error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown + ".Please Try Again.");
+                  },
+                });
+              },
+              error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown + ".Please Try Again.");
+              },
+            });
+          },
+
+          error: function (jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown + ".Please Try Again.");
+          },
+        });
+      });
+    });
+  </script>
+</html>
