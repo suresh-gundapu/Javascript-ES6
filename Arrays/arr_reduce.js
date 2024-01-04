@@ -7,7 +7,7 @@
 const arr  = [40,30,60,90];
 
 var result  = arr.reduce((x,y)=>{
-  return x+y;
+  return x>y;
 });
 console.log(result);
 
@@ -18,8 +18,15 @@ const salary = 15000;
 
 // function that subtracts all array elements from given number
 // 15000 - 1800 - 2000 - 3000 - 5000 - 500
-let remaining = expenses.reduce(
-  (accumulator, currentValue) => accumulator - currentValue,
-  salary
-);
-console.log(remaining); // 2700
+// let remaining = expenses.reduce(
+//   (accumulator, currentValue) => accumulator - currentValue,
+//   salary
+// );
+//console.log(remaining); // 2700
+
+
+let remaining = expenses.reduce((x,y)=>{
+return (x-y);
+},salary);
+
+console.log(remaining);

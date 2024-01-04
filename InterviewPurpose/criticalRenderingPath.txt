@@ -1,0 +1,6 @@
+Critical rendering Path:
+========================
+
+It is a process or sequence  of steps browser convert HTML,CSS,JS (clinent side technologies ) into pixels of screen 
+
+if optimize the critical render path then permance render of web is increasing 

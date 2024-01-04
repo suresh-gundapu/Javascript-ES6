@@ -4,7 +4,7 @@
  => this is works on variables and functions 
  it allows to use functions and variables before declaration of them 
 
- it is js default behavior moving all declarations to top of the current scope 
+ it is js default behavior moving all declarations of variables and functions to top of the current scope 
 
  */
 console.log(x);

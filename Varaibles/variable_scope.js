@@ -7,8 +7,8 @@
 //1)intilization//
 
 /*
-var/let: we can intilize without value declare 
-const: we cant access without value decalre 
+var/let: we can intilize without value declare  or assigning
+const: we cant access without value decalre or assigning
 
 */
 var x;
@@ -19,7 +19,7 @@ console.log("this is let intilization without value declare" + y);
 // const z;
 // console.log('this is const intilization without value declare' + z);// syntax error
 
-//2)reassigning
+//2)reassigning // redeclaring:
 
 /* 
 var : it allows reassigning 
@@ -80,3 +80,37 @@ function add() {
 console.log(`this is global var accessing ${parseInt(m + n + o)}`); // global scope we can access anywhere
 //console.log(`this is local var accessing ` + (parseInt(s + t + u)));// local scope var access within function only reference error
 add();
+/**
+ * Var :
+ * =======
+ * 
+ * -> the scope var varaible is functional scope
+ * 
+ * -> it can be decalred or assigned without intilization
+ * ->it can be updated and redeclared is possible
+ * -> it can be accessed without intilized
+
+ * 
+ * Let:
+ * =====
+ * -> the scope of let varaible is block scope
+ * -> it can be  aslodecalred or assigned without intilization
+ * ->i t can be updated and redeclared is impossible
+ * -> it cannot be accessed without intilized
+
+ * 
+ *Const:
+ =========
+ * 
+ * -> the scope of const varaible is also block scope
+ * -> it cannot be decalred or assigned without intilization
+ * 
+ * -> it cannot be declared or assigned and redeclared not possible 
+ * 
+ * 
+ * -> it cannot be accessed without intilized
+ * 
+ * 
+ * 
+ * 
+ */

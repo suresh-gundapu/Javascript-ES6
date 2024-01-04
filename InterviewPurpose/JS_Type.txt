@@ -1,0 +1,21 @@
+Javascript is static type or Dynamic type?
+==========================================
+
+Dynamic type language :
+--------------------------
+-> Js is Dynamic type language 
+
+-> it can checked what type of variable at compilation time 
+
+-> variables have no type 
+
+-> variables can change type 
+
+Static Type Language :
+---------------------
+
+-> It can check type of var at run time 
+
+-> variable has type 
+
+-> variable cannot change type 
